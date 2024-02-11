@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report2" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="84150be1-0b24-4d26-92b9-cb596fdb1342">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     product_details.`product_id` AS product_details_product_id,
+     product_details.`category_name` AS product_details_category_name,
+     product_details.`sub_category_name` AS product_details_sub_category_name,
+     product_details.`product_image` AS product_details_product_image,
+     product_details.`product_name` AS product_details_product_name,
+     product_details.`discription` AS product_details_discription,
+     product_details.`price` AS product_details_price
+FROM
+     `product_details` product_details]]>
+	</queryString>
+	<field name="product_details_product_id" class="java.lang.Integer"/>
+	<field name="product_details_category_name" class="java.lang.String"/>
+	<field name="product_details_sub_category_name" class="java.lang.String"/>
+	<field name="product_details_product_image" class="java.lang.String"/>
+	<field name="product_details_product_name" class="java.lang.String"/>
+	<field name="product_details_discription" class="java.lang.String"/>
+	<field name="product_details_price" class="java.lang.Integer"/>
+	<group name="product_details_product_id">
+		<groupExpression><![CDATA[$F{product_details_product_id}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="89" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="-23" y="1" width="845" height="87" backcolor="#CCFFFF" uuid="d105569d-5e23-40fd-ba30-f01e9e98045d"/>
+				<textElement>
+					<font fontName="Algerian" size="36" isBold="true"/>
+				</textElement>
+				<text><![CDATA[                 PRODUCT DETAILS]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-23" y="0" width="845" height="1" uuid="1601cbe5-893c-4107-bc12-0056b45ab991"/>
+			</line>
+			<line>
+				<reportElement x="-23" y="88" width="845" height="1" uuid="2049e4fa-4a5b-478c-acb6-bf9fb6425311"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="18" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="20" y="0" width="114" height="20" uuid="f9da0015-e6d5-4d73-88de-0e532b87497d"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="114" y="0" width="114" height="20" uuid="9c3d95a2-e986-430d-a8cf-6b64746cfb5d"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Category]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="274" y="0" width="114" height="20" uuid="09563253-0d3c-458c-a64e-d25de184e190"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sub-Category]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="455" y="0" width="114" height="20" uuid="9fde336f-5e4b-4e4e-8e9e-3e3f13d22c20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Product Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="630" y="0" width="114" height="20" uuid="69e575b7-c09f-4e9d-9755-cda2c2cfd498"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Price]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-23" y="41" width="845" height="1" forecolor="#666666" uuid="e0aca396-613f-42d9-b637-7b7db8c1d9d7"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="59" splitType="Stretch">
+			<textField>
+				<reportElement x="20" y="0" width="114" height="20" uuid="34266d9b-25c5-4ab8-9093-777d9af8dc79"/>
+				<textFieldExpression><![CDATA[$F{product_details_product_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="114" y="0" width="114" height="20" uuid="9371e154-6970-461c-b4ec-ad6177170004"/>
+				<textFieldExpression><![CDATA[$F{product_details_category_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="274" y="0" width="114" height="20" uuid="718b5ad8-7b1e-4426-972e-66a42befa211"/>
+				<textFieldExpression><![CDATA[$F{product_details_sub_category_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="0" width="114" height="20" uuid="f432fb85-8a1b-4275-b5a9-5af88664f8ad"/>
+				<textFieldExpression><![CDATA[$F{product_details_product_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="630" y="0" width="114" height="20" uuid="6b6c8564-65e6-43d0-871c-c0edb8f408ba"/>
+				<textFieldExpression><![CDATA[$F{product_details_price}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="-23" y="35" width="845" height="1" forecolor="#CCCCCC" uuid="d8c34335-76be-4965-9b9b-b2c50b5e0e8b"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="34" splitType="Stretch">
+			<line>
+				<reportElement x="-23" y="16" width="845" height="1" uuid="77c59582-5b4b-4dd9-99f9-fb69a5029a0c"/>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="35" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="31" splitType="Stretch"/>
+	</summary>
+</jasperReport>

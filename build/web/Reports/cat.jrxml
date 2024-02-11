@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="cat" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c88fb36a-e7ca-4ca7-b133-d31f78b6fb62">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     category.`category_id` AS category_category_id,
+     category.`category_name` AS category_category_name,
+     category.`image` AS category_image,
+     category.`Product_discription` AS category_Product_discription
+FROM
+     `category` category]]>
+	</queryString>
+	<field name="category_category_id" class="java.lang.Integer"/>
+	<field name="category_category_name" class="java.lang.String"/>
+	<field name="category_image" class="java.lang.String"/>
+	<field name="category_Product_discription" class="java.lang.String"/>
+	<group name="category_category_id">
+		<groupExpression><![CDATA[$F{category_category_id}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="87" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="-17" y="7" width="836" height="74" forecolor="#FF6600" backcolor="#CCFFFF" uuid="521fb8b6-0c0c-4c05-92ea-a5f0103208e2"/>
+				<textElement>
+					<font fontName="Algerian" size="36" isBold="true"/>
+				</textElement>
+				<text><![CDATA[           	         CATEGORY]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-17" y="81" width="836" height="1" uuid="2179ccf0-fc69-4b4b-ac1d-a4ecaf41a8b2"/>
+			</line>
+			<line>
+				<reportElement x="-17" y="6" width="836" height="1" uuid="f99e3575-e690-4873-b145-7a2beb6ae29a"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="55" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="124" height="38" uuid="8d323eb5-dad6-4f24-850c-c0aa27ea72d3"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="124" y="0" width="276" height="38" uuid="94490508-709b-48db-97ee-d0cf25f20faa"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Category Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="371" y="0" width="229" height="38" uuid="842dd10a-01ce-446d-ae1e-22b9b4aabee6"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Image]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="578" y="0" width="222" height="38" backcolor="#FFFFCC" uuid="be5b1011-f471-4fb9-9a3c-c276b83fc9cb"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Discription]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-17" y="34" width="836" height="1" forecolor="#666666" uuid="74dc84bb-fe08-46af-a6e4-a83aef6df22c"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="61" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="200" height="20" uuid="59fff94a-9706-4e48-bf1c-2edbc64aaac2"/>
+				<textFieldExpression><![CDATA[$F{category_category_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="124" y="0" width="276" height="20" uuid="78445451-6a3e-4b01-9fd9-b86ce0e3f07f"/>
+				<textFieldExpression><![CDATA[$F{category_category_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="371" y="0" width="229" height="20" uuid="3a188d87-436d-476a-aef5-b6e482830a35"/>
+				<textFieldExpression><![CDATA[$F{category_image}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="578" y="0" width="222" height="20" uuid="08a24f0d-fcb7-4bf3-a7a5-5ea4f1bba389"/>
+				<textFieldExpression><![CDATA[$F{category_Product_discription}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement mode="Transparent" x="-17" y="37" width="836" height="1" forecolor="#999999" backcolor="#FFFFFF" uuid="d58b4202-e7a2-4dd4-84b0-bd7e01f0604e"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="47" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

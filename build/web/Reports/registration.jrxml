@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="registration" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ffc947b0-93bb-44c5-9389-fac0a6fc7a00">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     registration.`R_id` AS registration_R_id,
+     registration.`Fname` AS registration_Fname,
+     registration.`address` AS registration_address,
+     registration.`contact` AS registration_contact,
+     registration.`username` AS registration_username,
+     registration.`password` AS registration_password,
+     registration.`rpassword` AS registration_rpassword,
+     registration.`gender` AS registration_gender
+FROM
+     `registration` registration]]>
+	</queryString>
+	<field name="registration_R_id" class="java.lang.Integer"/>
+	<field name="registration_Fname" class="java.lang.String"/>
+	<field name="registration_address" class="java.lang.String"/>
+	<field name="registration_contact" class="java.lang.Long"/>
+	<field name="registration_username" class="java.lang.String"/>
+	<field name="registration_password" class="java.lang.String"/>
+	<group name="registration_R_id">
+		<groupExpression><![CDATA[$F{registration_R_id}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="90" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="-21" y="0" width="842" height="89" backcolor="#CCFFFF" uuid="409c59ed-b63b-4a0c-b575-75e146f62cb8"/>
+				<textElement>
+					<font fontName="Algerian" size="36"/>
+				</textElement>
+				<text><![CDATA[                             REGISTRATION]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-21" y="0" width="842" height="1" uuid="ba28b512-0235-4d98-a5ad-2f167574032f"/>
+			</line>
+			<line>
+				<reportElement x="-21" y="89" width="842" height="1" uuid="6851dbf9-c6c4-4697-944d-46b66ee2cb1b"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="43" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="104" height="20" uuid="4bfa491a-26e9-4598-8c01-3dae0e50d432"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="133" y="0" width="117" height="20" uuid="68f98513-608b-4923-8399-baffc1fb16a7"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Full name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="266" y="0" width="122" height="20" uuid="c323fb2d-7694-4a55-96e5-f7bb83c5395a"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="399" y="0" width="118" height="20" uuid="73328ab2-88e9-4f55-a326-cb254079dc7e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Contact]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="532" y="0" width="133" height="20" uuid="39d3fa68-645c-4a14-a722-a65f2e6d0383"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Username]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="665" y="0" width="123" height="20" uuid="a558b2d5-3981-4c21-9e12-4b9327111f43"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Password]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-21" y="32" width="842" height="1" forecolor="#999999" uuid="48a7102a-b195-457e-95e5-abcbae39eb93"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="44" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="104" height="20" uuid="7bce2a9a-e164-46b4-9602-292f1dcae4f5"/>
+				<textFieldExpression><![CDATA[$F{registration_R_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="133" y="0" width="117" height="20" uuid="41c575ad-cb21-415a-b754-84ca6680435d"/>
+				<textFieldExpression><![CDATA[$F{registration_Fname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="266" y="0" width="122" height="20" uuid="74aab174-79a3-4ac5-b601-f4f4e7a9bf1f"/>
+				<textFieldExpression><![CDATA[$F{registration_address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="399" y="0" width="118" height="20" uuid="dc39cb3f-98b7-4de3-980f-73cfb3d0ba90"/>
+				<textFieldExpression><![CDATA[$F{registration_contact}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="532" y="0" width="122" height="20" uuid="c900855a-c2de-4c53-8b73-cb77a60ad03b"/>
+				<textFieldExpression><![CDATA[$F{registration_username}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="665" y="0" width="123" height="20" uuid="b38983cd-94b5-4271-8aed-b26ef4d4c5f6"/>
+				<textFieldExpression><![CDATA[$F{registration_password}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="-21" y="34" width="842" height="1" forecolor="#CCCCCC" uuid="bd9c47a9-b7b7-4f70-bb90-457ebf90b3d1"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
